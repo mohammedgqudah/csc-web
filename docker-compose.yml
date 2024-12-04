@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    ports:
+      - 5001:3000
+    volumes:
+      - ./main.py:/app/main.py
+    environment:
+      FLAG: 'ASU{22b831acae18d148cc8d33b48b50d0c3b59410b7fc70a4}'
+
+
