@@ -1,0 +1,14 @@
+services:
+  challenge:
+    build: .
+    ports:
+      - 3001:3000
+    # map volumes so that you can test and add logs quickly to the code while debugging.
+    volumes:
+      - ./package.json:/app/package.json
+      - ./report.js:/app/report.js
+      - ./index.js:/app/index.js
+      - ./config/supervisord.conf:/etc/supervisor/supervisord.conf
+      - ./config/nginx.conf:/etc/nginx/nginx.conf
+    environment:
+      FLAG: 'CSC{f5b47428c2be5383f5d7f46f8696e50305f08d9bf07fa7}'
